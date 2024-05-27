@@ -32,8 +32,26 @@ download_model(model_url)
 #load stoi
 stoi = load_vocab_size()
 
+class NeuralNetwork(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.linear_relu_stack = nn.Sequential(
+            nn.Embedding(context_length, n_embd),
+            nn.Linear(n_embd , n_hidden),
+            nn.Tanh(),
+            nn.Linear(n_hidden, n_hidden),
+            nn.Tanh(),
+            nn.Linear(n_hidden, output_dim),
+        )
+
+    def forward(self, x):
+        logits = self.linear_relu_stack(x)
+        return logits
+
+model = NeuralNetwork()
+
 # load trained torch model from torch
-model = torch.load("model/sentiment_pt.pt")
+model = model.load_state_dict(torch.load("model/sentiment_pt.pt"))
 model.eval()
 
 
