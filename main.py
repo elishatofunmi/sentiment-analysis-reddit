@@ -16,7 +16,7 @@ if "chat_history" not in st.session_state:
 model_url = "https://drive.google.com/file/d/12Jm-PRrLHF0_l9pNV8oQmCxxCX8kRFT3/view?usp=sharing" # link to the trained sentiment model, sentiment_pt.pt 
 label_list = ['medical doctor', 'veterinarian', 'others']
 def download_model(model_url): # downloads the pytorch model from google drive.
-    cmd = "python gdrivedl.py %s -o %s" % (model_url, "model/sentiment_pt.pt")
+    cmd = "python gdrivedl/gdrivedl.py %s -o %s" % (model_url, "model/sentiment_pt.pt")
     os.system(cmd)
     return
 
