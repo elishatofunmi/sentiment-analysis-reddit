@@ -65,7 +65,7 @@ def encode_message(user_input): # encode the text data from users into numbers.
     block_size = 17000
     x_len = len(user_input[:block_size]) # limit user input to block_size
     context = [0] * (block_size - x_len)
-    context_trans = [stoi[ch] for ch in x.lower()]
+    context_trans = [stoi[ch] for ch in user_input.lower()]
     context.extend(context_trans)
     return np.array(context).reshape(1, -1)
 
