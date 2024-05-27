@@ -5,6 +5,8 @@ from streamlit_option_menu import option_menu
 from dotenv import load_dotenv
 import os, json, requests, torch, pickle
 import numpy as np 
+import torch.nn as nn
+
 
 
 # Session States
