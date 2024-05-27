@@ -13,7 +13,7 @@ import torch.nn as nn
 if "conversation" not in st.session_state:
     st.session_state.conversation = None
 if "chat_history" not in st.session_state:
-    st.session_state.chat_history = None
+    st.session_state.chat_history = []
 
 model_url = "https://drive.google.com/file/d/12Jm-PRrLHF0_l9pNV8oQmCxxCX8kRFT3/view?usp=sharing" # link to the trained sentiment model, sentiment_pt.pt 
 label_list = ['medical doctor', 'veterinarian', 'others']
