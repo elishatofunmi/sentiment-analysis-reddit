@@ -33,6 +33,10 @@ download_model(model_url)
 
 #load stoi
 stoi = load_vocab_size()
+n_embd = 500 # the dimensionality of the character embedding vectors
+n_hidden = 1000 # the number of neurons in the hidden layer of the MLP
+output_dim = 3
+context_length = 17000
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
