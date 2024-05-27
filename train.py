@@ -1,5 +1,5 @@
 import pandas as pd
-import torch
+import torch, pickle
 import torch.nn.functional as F
 import matplotlib.pyplot as plt # for making figures
 import numpy as np
@@ -165,4 +165,11 @@ with torch.no_grad():
 df_samp.to_csv("samp.csv", index= False)
 
 torch.save(model, 'sentiment_pt.pt')
+
+# save vocab_size
+# Open a file and use dump() 
+with open('model/lookup_dict.pkl', 'wb') as file: 
+    # A new file will be created 
+    pickle.dump(stoi, file)
+
 
