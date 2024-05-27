@@ -72,7 +72,6 @@ def encode_message(user_input): # encode the text data from users into numbers.
 
 def decode_sentiment(encoded_message): # predict if this is text is that of a medical doctor, veterinarian or others.
     
-    ix = torch.randint(0, Xtr.shape[0], (1,))
     Xb = encoded_message
 
     out = model(Xb)
