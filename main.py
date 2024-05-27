@@ -57,7 +57,7 @@ class NeuralNetwork(nn.Module):
 model = NeuralNetwork()
 
 # load trained torch model from torch
-model = model.load_state_dict(torch.load("model/sentiment_pt.pt"))
+model = torch.load("model/sentiment_pt.pt")
 model.eval()
 
 
