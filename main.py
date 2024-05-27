@@ -67,12 +67,12 @@ def encode_message(user_input): # encode the text data from users into numbers.
     context = [0] * (block_size - x_len)
     context_trans = [stoi[ch] for ch in user_input.lower()]
     context.extend(context_trans)
-    return np.array(context).reshape(1, -1)
+    return np.array(context).reshape(1, -1) # as array
 
 
 def decode_sentiment(encoded_message): # predict if this is text is that of a medical doctor, veterinarian or others.
     
-    Xb = encoded_message
+    Xb = torch.Tensor(encoded_message)
 
     out = model(Xb)
     _, predicted = torch.max(out, 1)
