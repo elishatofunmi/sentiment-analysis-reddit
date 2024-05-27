@@ -72,7 +72,7 @@ def encode_message(user_input): # encode the text data from users into numbers.
 
 def decode_sentiment(encoded_message): # predict if this is text is that of a medical doctor, veterinarian or others.
     
-    Xb = torch.Tensor(encoded_message)
+    Xb = torch.tensor(encoded_message)
 
     out = model(Xb)
     _, predicted = torch.max(out, 1)
